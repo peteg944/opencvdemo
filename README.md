@@ -17,23 +17,23 @@ The following software packages and libraries were used for the web page:
 
 Installing the web server (for Ubuntu):
 
-1. Install the Apache 2 web server
+1. Install the Apache 2 web server  
 `sudo apt-get install apache2`
 
-2. Restart it to make sure all the changes are applied
+2. Restart it to make sure all the changes are applied  
 `sudo service apache2 restart`
 
-3. Create a new site configuration using the default as a template
-`cd /etc/apache2/sites-available/`
+3. Create a new site configuration using the default as a template  
+`cd /etc/apache2/sites-available/`  
 `sudo cp 000-default.conf MySite.conf`
 
 4. If necessary, edit _MySite.conf_ so that `DocumentRoot` points to the following folder: `/var/www/` instead of `/var/www/html/`
 
-5. Deactivate the _000-default_ site and enable your new site (e.g. MySite)
-`sudo a2dissite 000-default` (disabling)
+5. Deactivate the _000-default_ site and enable your new site (e.g. MySite)  
+`sudo a2dissite 000-default` (disabling)  
 `sudo a2ensite MySite` (enabling)
 
-6. Restart Apache again
+6. Restart Apache again  
 `sudo service apache2 restart`
 
 7. Create an `index.html` file in the `/var/www/` folder, and put a bit of HTML code in it, such as `<h1>Hey</h1>`
@@ -42,14 +42,14 @@ Installing the web server (for Ubuntu):
 
 Installing PHP (for Ubuntu):
 
-1. Install the PHP software
+1. Install the PHP software  
 `sudo apt-get install libapache2-mod-php5`
 
-2. Enable the module so Apache recognizes it
-`sudo a2enmod php5`
+2. Enable the module so Apache recognizes it  
+`sudo a2enmod php5`  
 (It may say that it's already enabled)
 
-3. Restart Apache again
+3. Restart Apache again  
 `sudo service apache2 restart`
 
 4. Test out PHP by creating a `test.php` file in the `/var/www/` folder, and put the following text in the file: `<?php phpinfo(); ?>`
