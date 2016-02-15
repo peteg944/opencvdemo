@@ -2,7 +2,15 @@
 This project utilizes OpenCV to automatically detect and highlight bodies of water in satellite images.
 
 ### Image processing
-< Information about the algorithm and code, installing OpenCV>
+The algorithm used for image processing is HSV. Following are the steps for the processing:
+1. Firstly the image is loaded through the website and accepted by the OpenCV code.
+2. Secondly blur function is used to remove the noise from the image.
+3. Thirdly the cvtColor function is used to convert the BGR image to HSV.
+4. Fourthly for the segmentation inRange function is used in which a set of range is defined to segment blue color from the image.
+5. As the image after inRange function is one channel thus we have used for loop to convert it into 3 channel.
+6. Now to get the final segmented image which represents water thus we used mul function to get dot product of input image and the image from previous step.
+7. If the mul function is successful then the openCV code gives a output as success.
+8. After this the segmented image is picked up by front end to display it on web page.
 
 ### Front-end
 At the front-end of the project is a web page with a drag-and-drop image upload form. A JavaScript library called Dropzone was used for this feature. Once an image is dropped onto the form, it is uploaded to a folder on the Apache web server using a short PHP script. When the upload is completed a separate PHP script runs the image processing program, giving it the uploaded image as an input. Finally, when the processing is finished, the resulting image is displayed on the web page.
